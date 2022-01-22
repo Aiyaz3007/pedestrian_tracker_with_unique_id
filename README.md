@@ -11,16 +11,23 @@ pip install -r requirements.txt
 # TensorFlow GPU
 pip install -r requirements-gpu.txt
 
+
+
 ## Downloading Official YOLOv4 Pre-trained Weights
 Our object tracker uses YOLOv4 to make the object detections, which deep sort then uses to track. There exists an official pre-trained YOLOv4 object detector model that is able to detect 80 classes. For easy demo purposes we will use the pre-trained weights for our tracker.
 Download pre-trained yolov4.weights file: https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT
 
 Copy and paste yolov4.weights from your downloads folder into the 'data' folder of this repository.
 
-If you want to use yolov4-tiny.weights, a smaller model that is faster at running detections but less accurate, download file here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
+!wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights -P /pedestrian_tracker_with_unique_id/data/
+
+
 
 
 ## Running the Tracker with YOLOv4
+
+# save yolov4 model
+python save_model.py  --model yolov4 
 
 python3 pedestrain_calculator.py --video <path of input video in mp4 format> --output <path of output video > --model yolov4 --info
 
