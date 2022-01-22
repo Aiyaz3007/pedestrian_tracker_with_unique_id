@@ -317,8 +317,8 @@ def main(_argv):
             cv2.putText(frame, "Direction :" + "" + str(left_to_right_count),(50,100),0, 1, (20,0,255),2)
 
         # if enable info flag then print details about each track
-            # if FLAGS.info:
-            #     print("Tracker ID: {}, Class: {},  BBox Coords (xmin, ymin, xmax, ymax): {}".format(str(track.track_id), class_name, (int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]))))
+            if FLAGS.info:
+                print("Tracker ID: {}, Class: {},  BBox Coords (xmin, ymin, xmax, ymax): {}".format(str(track.track_id), class_name, (int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3]))))
 
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)
